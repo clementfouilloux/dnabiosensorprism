@@ -1,0 +1,15 @@
+directive sample 1000.0 10000
+directive plot <p1^ p2^>;[p2^* p1^*]<q1^ q2^>;[q1^* p1^]
+directive lengths 6 18
+directive migrate 399.6
+directive toeholds 0.0035 0.0535
+def N = 1
+
+def P() = <p1^ p2^>
+def PQ() = <p2^*>[p1^* q1^]<q2^>
+def auxPQ() = <p1^* q1^>
+
+( N*P()
+| N*PQ()
+| N*auxPQ()
+)

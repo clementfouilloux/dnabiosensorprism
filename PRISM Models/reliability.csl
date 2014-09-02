@@ -1,0 +1,19 @@
+const double T;
+
+// finished successfully at time T
+P=? [ F[T,T] "all_done" ]
+
+// stuck at time T
+P=? [ F[T,T] "deadlock" & !"all_done" ]
+
+// finished at time T
+P=? [ F[T,T] "deadlock" ]
+
+// finished successfully eventually
+P=? [ F "all_done" ]
+
+// stuck eventually
+P=? [ F "deadlock" & !"all_done" ]
+
+// finished eventually
+P=? [ F "deadlock" ]

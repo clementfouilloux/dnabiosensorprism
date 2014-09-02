@@ -1,0 +1,14 @@
+// how many deadlock (finished) states?
+filter(count, "deadlock");
+
+// how many "stuck" states?
+filter(count, "deadlock" & !"all_done");
+
+// is there a path to a "success" state?
+E [ F "all_done" ];
+
+// is there a path to a "stuck" state?
+E [ F "deadlock" & !"all_done" ];
+
+// are all deadlock states successful?
+A [ G "deadlock" => "all_done" ];

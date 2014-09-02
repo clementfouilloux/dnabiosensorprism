@@ -1,0 +1,30 @@
+directive sample 100000.0 100000
+directive plot <q1^ q2^>;{x1^}[y^* z2^*]<r1^ r2^>;[z2^* r1^]
+directive lengths 6 18
+directive migrate 399.6
+directive toeholds 0.0035 0.0535
+def N = 1
+
+def P() = <p1^ p2^>
+def Q() = <q1^ q2^>
+def X() = <x1^ x2^> 
+def Z() = <z1^ z2^>
+
+def PXYZQ() = <p2^*>[p1^* x2^*]::[x1^* y^* z2^*]::[z1^* q2^*]<q1^*>
+def YR() = <y^*>[z2^* r1^]<r2^>
+def auxYR() = <z2^* r1^>
+def auxPX() = <p1^* x2^*>
+def auxZQ() = <z1^* q2^*>
+
+
+( N*P()
+| N*Q()
+| N*X()
+| N*Z()
+| N*PXYZQ()
+| N*YR()
+| N*auxPX()
+| N*auxZQ()
+| N*auxYR()
+
+)

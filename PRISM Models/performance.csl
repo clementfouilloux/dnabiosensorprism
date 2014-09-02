@@ -1,0 +1,4 @@
+// expected time to finish successfully
+R{"time"}=? [ F "all_done" ]
+// expected time to finish successfully (weak)
+R{"time"}=? [ F "weak_all_done" ]
